@@ -10,12 +10,43 @@ package me.abdurkhalid.ems;
  * @author 568789
  */
 public class EditingEmployee extends javax.swing.JFrame {
-
+    static EmployeeInfo theEmployee;
     /**
      * Creates new form EditingEmployee
      */
-    public EditingEmployee() {
+    public EditingEmployee(EmployeeInfo employee) {
+        this.theEmployee = employee;
         initComponents();
+        if (employee instanceof FullTimeEmployee) {
+        HourlyWage.setVisible(false);
+        HoursPerWeek.setVisible(false);
+        WeeksPerYear.setVisible(false);
+        HW.setVisible(false);
+        HPW.setVisible(false);
+        WPY.setVisible(false);
+        setFields(false);
+        } else {
+            setFields(true);
+        }
+    }
+    private void setFields(boolean isPartTime) {
+       if (isPartTime) {
+           PartTimeEmployee pte = (PartTimeEmployee) theEmployee;
+           HW.setText(""+pte.getHourlyWage());
+           HPW.setText(""+pte.getHoursPerWeek());
+           WPY.setText(""+pte.getWeeksPerYear());
+       } else {
+           FullTimeEmployee fte = (FullTimeEmployee) theEmployee;
+           SAL.setText(""+fte.calcDeductions(fte.getDeductionRate()));
+           
+       }
+       FN.setText(theEmployee.getEmployeeFirstName());
+       LN.setText(theEmployee.getEmployeeLastName());
+       SX.setText(""+theEmployee.getEmployeeSex());
+       EN.setText(""+theEmployee.getEmployeeNumber());
+       WL.setText(""+theEmployee.getEmployeeWorkLocation());
+       DR.setText(""+theEmployee.getDeductionRate());
+       
     }
 
     /**
@@ -36,12 +67,21 @@ public class EditingEmployee extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        HourlyWage = new javax.swing.JLabel();
+        HoursPerWeek = new javax.swing.JLabel();
+        WeeksPerYear = new javax.swing.JLabel();
+        EN = new javax.swing.JTextField();
+        FN = new javax.swing.JTextField();
+        LN = new javax.swing.JTextField();
+        SX = new javax.swing.JTextField();
+        WL = new javax.swing.JTextField();
+        DR = new javax.swing.JTextField();
+        SAL = new javax.swing.JTextField();
+        HW = new javax.swing.JTextField();
+        HPW = new javax.swing.JTextField();
+        WPY = new javax.swing.JTextField();
+        saveChangesButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -63,11 +103,40 @@ public class EditingEmployee extends javax.swing.JFrame {
 
         jLabel9.setText("Salary");
 
-        jLabel10.setText("Hourly Wage ");
+        HourlyWage.setText("Hourly Wage ");
 
-        jLabel11.setText("Hours Per Week");
+        HoursPerWeek.setText("Hours Per Week");
 
-        jLabel12.setText("Weeks Per Year");
+        WeeksPerYear.setText("Weeks Per Year");
+
+        EN.setText("EN");
+
+        FN.setText("FN");
+
+        LN.setText("LN");
+
+        SX.setText("SX");
+
+        WL.setText("WL");
+
+        DR.setText("DR");
+
+        SAL.setText("SAL");
+
+        HW.setText("HW");
+
+        HPW.setText("HPW");
+
+        WPY.setText("WPY");
+
+        saveChangesButton.setText("Save Changes");
+
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,17 +152,31 @@ public class EditingEmployee extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
+                    .addComponent(HourlyWage)
+                    .addComponent(HoursPerWeek)
+                    .addComponent(WeeksPerYear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(138, 138, 138))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(138, 138, 138))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(WPY, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HPW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                            .addComponent(HW, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SAL, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DR, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(WL, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SX, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LN, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FN, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EN, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(saveChangesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(40, 40, 40))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,34 +186,54 @@ public class EditingEmployee extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveChangesButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(SX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(WL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(DR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(SAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HourlyWage)
+                    .addComponent(HW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HoursPerWeek)
+                    .addComponent(HPW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WeeksPerYear)
+                    .addComponent(WPY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,16 +265,27 @@ public class EditingEmployee extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditingEmployee().setVisible(true);
+                new EditingEmployee(theEmployee).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DR;
+    private javax.swing.JTextField EN;
+    private javax.swing.JTextField FN;
+    private javax.swing.JTextField HPW;
+    private javax.swing.JTextField HW;
+    private javax.swing.JLabel HourlyWage;
+    private javax.swing.JLabel HoursPerWeek;
+    private javax.swing.JTextField LN;
+    private javax.swing.JTextField SAL;
+    private javax.swing.JTextField SX;
+    private javax.swing.JTextField WL;
+    private javax.swing.JTextField WPY;
+    private javax.swing.JLabel WeeksPerYear;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -180,8 +294,6 @@ public class EditingEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton saveChangesButton;
     // End of variables declaration//GEN-END:variables
 }

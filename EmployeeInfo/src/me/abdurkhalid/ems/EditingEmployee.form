@@ -40,20 +40,37 @@
                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="HourlyWage" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="HoursPerWeek" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="WeeksPerYear" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="46" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jTextField3" alignment="0" pref="93" max="32767" attributes="0"/>
-                      <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="WPY" alignment="0" max="32767" attributes="0"/>
+                          <Component id="HPW" alignment="0" pref="93" max="32767" attributes="0"/>
+                          <Component id="HW" alignment="0" max="32767" attributes="0"/>
+                          <Component id="SAL" alignment="0" max="32767" attributes="0"/>
+                          <Component id="DR" alignment="0" max="32767" attributes="0"/>
+                          <Component id="WL" alignment="0" max="32767" attributes="0"/>
+                          <Component id="SX" alignment="0" max="32767" attributes="0"/>
+                          <Component id="LN" alignment="0" max="32767" attributes="0"/>
+                          <Component id="FN" alignment="0" max="32767" attributes="0"/>
+                          <Component id="EN" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="saveChangesButton" max="32767" attributes="0"/>
+                          <Component id="backButton" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,33 +82,56 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="EN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="saveChangesButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="backButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LN" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <Component id="SX" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  <Component id="WL" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <Component id="DR" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SAL" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="HourlyWage" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="HW" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="HoursPerWeek" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="HPW" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="WeeksPerYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="WPY" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,26 +177,83 @@
         <Property name="text" type="java.lang.String" value="Salary"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="HourlyWage">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hourly Wage "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="HoursPerWeek">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hours Per Week"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="WeeksPerYear">
       <Properties>
         <Property name="text" type="java.lang.String" value="Weeks Per Year"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="EN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EN"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="FN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FN"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="LN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="LN"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="SX">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SX"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="WL">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="WL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="DR">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="SAL">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SAL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="HW">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="HW"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="HPW">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="HPW"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="WPY">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="WPY"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="saveChangesButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save Changes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
