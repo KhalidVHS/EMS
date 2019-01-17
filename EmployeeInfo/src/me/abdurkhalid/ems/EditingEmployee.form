@@ -32,45 +32,45 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="HourlyWage" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="HoursPerWeek" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="WeeksPerYear" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HourlyWage" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HoursPerWeek" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="WeeksPerYear" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="WPY" alignment="0" max="32767" attributes="0"/>
-                          <Component id="HPW" alignment="0" pref="93" max="32767" attributes="0"/>
-                          <Component id="HW" alignment="0" max="32767" attributes="0"/>
-                          <Component id="SAL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="DR" alignment="0" max="32767" attributes="0"/>
-                          <Component id="WL" alignment="0" max="32767" attributes="0"/>
-                          <Component id="SX" alignment="0" max="32767" attributes="0"/>
-                          <Component id="LN" alignment="0" max="32767" attributes="0"/>
-                          <Component id="FN" alignment="0" max="32767" attributes="0"/>
-                          <Component id="EN" alignment="0" max="32767" attributes="0"/>
+                          <Component id="WPY" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="HPW" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="HW" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="SAL" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="DR" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="WL" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="SX" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="LN" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="FN" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="EN" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="saveChangesButton" max="32767" attributes="0"/>
-                          <Component id="backButton" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="saveChangesButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="backButton" min="-2" pref="130" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,7 +139,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Employee Editing Form..."/>
+        <Property name="text" type="java.lang.String" value="Employee Edit"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -246,6 +246,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Save Changes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveChangesButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backButton">
       <Properties>

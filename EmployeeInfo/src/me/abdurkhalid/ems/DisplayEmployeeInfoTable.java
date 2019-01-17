@@ -298,12 +298,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void editEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeActionPerformed
-        if (employee instanceof PartTimeEmployee){
-        new EditingPartTime(employee).setVisible(true);
-        }
-        else if (employee instanceof FullTimeEmployee){
-        //
-        }
+        new EditingEmployee(employee).setVisible(true);
     }//GEN-LAST:event_editEmployeeActionPerformed
 
     /**

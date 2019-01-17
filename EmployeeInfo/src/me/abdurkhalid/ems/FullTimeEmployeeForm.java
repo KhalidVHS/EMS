@@ -241,7 +241,7 @@ public class FullTimeEmployeeForm extends javax.swing.JFrame {
         String deductionRateFromField = deductionratefield.getText();
         double deductionRateEntered = Double.parseDouble(deductionRateFromField);
         if (deductionRateEntered < 1) {
-        deductionRateEntered = deductionRateEntered/100;
+        deductionRateEntered = deductionRateEntered-100;
         }
         String salaryFromField = yearlysalaryfield.getText();
         double salaryEntered = Integer.parseInt(salaryFromField);
