@@ -279,8 +279,7 @@ public class EditingEmployee extends javax.swing.JFrame {
                 mainjframe.theHash.addToBucket(employeeAdding);
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("The Employee couldn't be added");
+            JOptionPane.showMessageDialog(null,"The Employee Could Not Be Edited!");
         }
 
     }//GEN-LAST:event_saveChangesButtonActionPerformed
