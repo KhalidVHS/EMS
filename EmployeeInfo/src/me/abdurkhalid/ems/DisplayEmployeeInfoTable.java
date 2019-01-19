@@ -127,7 +127,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
         HW = new javax.swing.JLabel();
         HPW = new javax.swing.JLabel();
         WPY = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        changeTypeName = new javax.swing.JButton();
         editEmployee = new javax.swing.JButton();
         Salary = new javax.swing.JLabel();
         SAL = new javax.swing.JLabel();
@@ -172,7 +172,12 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
 
         WPY.setText("WPY");
 
-        jButton1.setText("Change Type");
+        changeTypeName.setText("Change Type");
+        changeTypeName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeTypeNameActionPerformed(evt);
+            }
+        });
 
         editEmployee.setText("Edit Employee");
         editEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +241,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(editEmployee)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
+                        .addComponent(changeTypeName))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(title)))
@@ -290,7 +295,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editEmployee)
-                    .addComponent(jButton1))
+                    .addComponent(changeTypeName))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -300,6 +305,10 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
     private void editEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeActionPerformed
         new EditingEmployee(employee).setVisible(true);
     }//GEN-LAST:event_editEmployeeActionPerformed
+
+    private void changeTypeNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeTypeNameActionPerformed
+        new UserTypeChange(employee).setVisible(true);
+    }//GEN-LAST:event_changeTypeNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,8 +366,8 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
     private static javax.swing.JLabel WPY;
     private javax.swing.JLabel WeeksPerYear;
     private javax.swing.JLabel WorkLocation;
+    private javax.swing.JButton changeTypeName;
     private javax.swing.JButton editEmployee;
-    private javax.swing.JButton jButton1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
