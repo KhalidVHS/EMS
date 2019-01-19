@@ -5,12 +5,16 @@
  */
 package me.abdurkhalid.ems;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 568789
  */
 public class EditingEmployee extends javax.swing.JFrame {
+
     static EmployeeInfo theEmployee;
+
     /**
      * Creates new form EditingEmployee
      */
@@ -18,35 +22,36 @@ public class EditingEmployee extends javax.swing.JFrame {
         this.theEmployee = employee;
         initComponents();
         if (employee instanceof FullTimeEmployee) {
-        HourlyWage.setVisible(false);
-        HoursPerWeek.setVisible(false);
-        WeeksPerYear.setVisible(false);
-        HW.setVisible(false);
-        HPW.setVisible(false);
-        WPY.setVisible(false);
-        setFields(false);
+            HourlyWage.setVisible(false);
+            HoursPerWeek.setVisible(false);
+            WeeksPerYear.setVisible(false);
+            HW.setVisible(false);
+            HPW.setVisible(false);
+            WPY.setVisible(false);
+            setFields(false);
         } else {
             setFields(true);
         }
     }
+
     private void setFields(boolean isPartTime) {
-       if (isPartTime) {
-           PartTimeEmployee pte = (PartTimeEmployee) theEmployee;
-           HW.setText(""+pte.getHourlyWage());
-           HPW.setText(""+pte.getHoursPerWeek());
-           WPY.setText(""+pte.getWeeksPerYear());
-       } else {
-           FullTimeEmployee fte = (FullTimeEmployee) theEmployee;
-           SAL.setText(""+fte.calcDeductions(fte.getDeductionRate()));
-           
-       }
-       FN.setText(theEmployee.getEmployeeFirstName());
-       LN.setText(theEmployee.getEmployeeLastName());
-       SX.setText(""+theEmployee.getEmployeeSex());
-       EN.setText(""+theEmployee.getEmployeeNumber());
-       WL.setText(""+theEmployee.getEmployeeWorkLocation());
-       DR.setText(""+theEmployee.getDeductionRate());
-       
+        if (isPartTime) {
+            PartTimeEmployee pte = (PartTimeEmployee) theEmployee;
+            HW.setText("" + pte.getHourlyWage());
+            HPW.setText("" + pte.getHoursPerWeek());
+            WPY.setText("" + pte.getWeeksPerYear());
+        } else {
+            FullTimeEmployee fte = (FullTimeEmployee) theEmployee;
+            SAL.setText("" + fte.calcDeductions(fte.getDeductionRate()));
+
+        }
+        FN.setText(theEmployee.getEmployeeFirstName());
+        LN.setText(theEmployee.getEmployeeLastName());
+        SX.setText("" + theEmployee.getEmployeeSex());
+        EN.setText("" + theEmployee.getEmployeeNumber());
+        WL.setText("" + theEmployee.getEmployeeWorkLocation());
+        DR.setText("" + theEmployee.getDeductionRate());
+
     }
 
     /**
@@ -87,7 +92,7 @@ public class EditingEmployee extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Employee Editing Form...");
+        jLabel1.setText("Employee Edit");
 
         jLabel3.setText("Employee Number");
 
@@ -130,6 +135,11 @@ public class EditingEmployee extends javax.swing.JFrame {
         WPY.setText("WPY");
 
         saveChangesButton.setText("Save Changes");
+        saveChangesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveChangesButtonActionPerformed(evt);
+            }
+        });
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -144,39 +154,39 @@ public class EditingEmployee extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(HourlyWage)
-                    .addComponent(HoursPerWeek)
-                    .addComponent(WeeksPerYear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(138, 138, 138))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(HourlyWage)
+                            .addComponent(HoursPerWeek)
+                            .addComponent(WeeksPerYear))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(WPY, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HPW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                            .addComponent(HW, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SAL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DR, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(WL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SX, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LN, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FN, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EN, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(saveChangesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(40, 40, 40))))
+                            .addComponent(WPY, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HPW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SAL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(WL, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(saveChangesButton)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,6 +245,46 @@ public class EditingEmployee extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    private void saveChangesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveChangesButtonActionPerformed
+        try {
+            String employeeNumberField = EN.getText();
+            int employeeNumberFound = Integer.parseInt(employeeNumberField);
+            String employeeFirstNameField = FN.getText();
+            String employeeLastNameField = LN.getText();
+            String employeeSexField = SX.getText();
+            int employeeSex = Integer.parseInt(employeeSexField);
+            String employeeworkLocationField = WL.getText();
+            int employeeWorkLocation = Integer.parseInt(employeeworkLocationField);
+            String employeeDRField = DR.getText();
+            Double employeeDR = Double.parseDouble(employeeDRField);
+            String salaryField = SAL.getText();
+            Double employeeSalary = Double.parseDouble(salaryField);
+            if (theEmployee instanceof PartTimeEmployee) {
+                String hoursWorkedField = HW.getText();
+                Double employeeHourlyWage = Double.parseDouble(hoursWorkedField);
+                String hoursWorkedPerWeekField = HPW.getText();
+                Double employeeHoursPerWeek = Double.parseDouble(hoursWorkedPerWeekField);
+                String employeeWeeksPerYearField = WPY.getText();
+                Double employeeWPY = Double.parseDouble(employeeWeeksPerYearField);
+                mainjframe.theHash.removeFromTable(theEmployee.getEmployeeNumber());
+                PartTimeEmployee employeeAdding = new PartTimeEmployee(employeeNumberFound, employeeFirstNameField, employeeLastNameField, employeeSex, employeeWorkLocation,
+                        employeeDR, employeeHourlyWage, employeeHoursPerWeek, employeeWPY);
+                mainjframe.theHash.addToBucket(employeeAdding);
+                JOptionPane.showMessageDialog(null ,"The Employee Has Been Added!");
+            }
+            else if (theEmployee instanceof FullTimeEmployee){
+                mainjframe.theHash.removeFromTable(theEmployee.getEmployeeNumber());
+                FullTimeEmployee employeeAdding = new FullTimeEmployee(employeeNumberFound,employeeFirstNameField,employeeLastNameField, employeeSex, 
+                        employeeWorkLocation, employeeDR,employeeSalary);
+                mainjframe.theHash.addToBucket(employeeAdding);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("The Employee couldn't be added");
+        }
+
+    }//GEN-LAST:event_saveChangesButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,6 +310,9 @@ public class EditingEmployee extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EditingEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

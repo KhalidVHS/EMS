@@ -49,7 +49,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
        SX.setText(""+employee.getEmployeeSex());
        EN.setText(""+employee.getEmployeeNumber());
        WL.setText(""+employee.getEmployeeWorkLocation());
-       DR.setText(""+employee.getDeductionRate());
+       DR.setText(""+(employee.getDeductionRate()));
        
     }
     
@@ -175,6 +175,11 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
         jButton1.setText("Change Type");
 
         editEmployee.setText("Edit Employee");
+        editEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editEmployeeActionPerformed(evt);
+            }
+        });
 
         Salary.setText("Salary");
 
@@ -291,6 +296,10 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void editEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeActionPerformed
+        new EditingEmployee(employee).setVisible(true);
+    }//GEN-LAST:event_editEmployeeActionPerformed
 
     /**
      * @param args the command line arguments

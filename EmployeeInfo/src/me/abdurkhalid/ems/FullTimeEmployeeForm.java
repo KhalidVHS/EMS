@@ -240,11 +240,11 @@ public class FullTimeEmployeeForm extends javax.swing.JFrame {
         int workLocationEntered = Integer.parseInt(WorkLocationFromField);
         String deductionRateFromField = deductionratefield.getText();
         double deductionRateEntered = Double.parseDouble(deductionRateFromField);
-        if (deductionRateEntered < 1) {
-        deductionRateEntered = deductionRateEntered/100;
+         if (deductionRateEntered > 1) {
+            deductionRateEntered = deductionRateEntered - 100;
         }
         String salaryFromField = yearlysalaryfield.getText();
-        double salaryEntered = Integer.parseInt(salaryFromField);
+        double salaryEntered = Double.parseDouble(salaryFromField);
         FullTimeEmployee employeeAdding = new FullTimeEmployee(employeeNumber,firstNameFromField,lastNameFromField, sexEntered, workLocationEntered, deductionRateEntered,salaryEntered);
         mainjframe.theHash.addToBucket(employeeAdding);}
         catch (Exception k){

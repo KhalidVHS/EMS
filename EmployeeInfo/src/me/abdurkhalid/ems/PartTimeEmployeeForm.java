@@ -289,7 +289,7 @@ public class PartTimeEmployeeForm extends javax.swing.JFrame {
         String deductionRateFromField = deductionratefield.getText();
         double deductionRateEntered = Double.parseDouble(deductionRateFromField);
         if (deductionRateEntered > 1) {
-            deductionRateEntered = deductionRateEntered / 100;
+            deductionRateEntered = deductionRateEntered - 100;
         }
         PartTimeEmployee employeeAdding = new PartTimeEmployee(employeeNumber, firstNameFromField, lastNameFromField, sexEntered, workLocationEntered,
                 deductionRateEntered, hourlyWageEntered, hoursWorkedEntered, weeksWorkedEntered);
