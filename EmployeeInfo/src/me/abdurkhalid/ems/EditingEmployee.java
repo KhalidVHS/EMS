@@ -5,6 +5,8 @@
  */
 package me.abdurkhalid.ems;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 568789
@@ -268,15 +270,17 @@ public class EditingEmployee extends javax.swing.JFrame {
                 PartTimeEmployee employeeAdding = new PartTimeEmployee(employeeNumberFound, employeeFirstNameField, employeeLastNameField, employeeSex, employeeWorkLocation,
                         employeeDR, employeeHourlyWage, employeeHoursPerWeek, employeeWPY);
                 mainjframe.theHash.addToBucket(employeeAdding);
+                JOptionPane.showMessageDialog(null ,"The Employee Has Been Added!");
             }
             else if (theEmployee instanceof FullTimeEmployee){
+                mainjframe.theHash.removeFromTable(theEmployee.getEmployeeNumber());
                 FullTimeEmployee employeeAdding = new FullTimeEmployee(employeeNumberFound,employeeFirstNameField,employeeLastNameField, employeeSex, 
                         employeeWorkLocation, employeeDR,employeeSalary);
                 mainjframe.theHash.addToBucket(employeeAdding);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The Employee Couldn't be added");
+            System.out.println("The Employee couldn't be added");
         }
 
     }//GEN-LAST:event_saveChangesButtonActionPerformed

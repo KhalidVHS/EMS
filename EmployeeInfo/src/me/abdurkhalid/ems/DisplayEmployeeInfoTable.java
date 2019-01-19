@@ -49,7 +49,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
        SX.setText(""+employee.getEmployeeSex());
        EN.setText(""+employee.getEmployeeNumber());
        WL.setText(""+employee.getEmployeeWorkLocation());
-       DR.setText(""+employee.getDeductionRate());
+       DR.setText(""+(employee.getDeductionRate()));
        
     }
     

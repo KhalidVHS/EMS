@@ -159,7 +159,7 @@ public class EmployeeTable extends javax.swing.JFrame {
     private void searchbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbuttonActionPerformed
        String searchingvalueretrieved = searchingvalue.getText();
        int searched = Integer.parseInt(searchingvalueretrieved);
-       theHash.searchTableEnum(searched);
+       new DisplayEmployeeInfoTable(theHash.searchTableEnum(searched)).setVisible(true);
        
     }//GEN-LAST:event_searchbuttonActionPerformed
 
