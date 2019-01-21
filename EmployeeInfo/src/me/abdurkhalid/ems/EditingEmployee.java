@@ -270,6 +270,9 @@ public class EditingEmployee extends javax.swing.JFrame {
                 PartTimeEmployee employeeAdding = new PartTimeEmployee(employeeNumberFound, employeeFirstNameField, employeeLastNameField, employeeSex, employeeWorkLocation,
                         employeeDR, employeeHourlyWage, employeeHoursPerWeek, employeeWPY);
                 mainjframe.theHash.addToBucket(employeeAdding);
+                MyHashTable.employeesToDisplay();
+                MyHashTable.resetArrayList(MyHashTable.addingtojtable);
+                MyHashTable.displayTableInfo();
                 JOptionPane.showMessageDialog(null ,"The Employee Has Been Added!");
             }
             else if (theEmployee instanceof FullTimeEmployee){
@@ -277,6 +280,9 @@ public class EditingEmployee extends javax.swing.JFrame {
                 FullTimeEmployee employeeAdding = new FullTimeEmployee(employeeNumberFound,employeeFirstNameField,employeeLastNameField, employeeSex, 
                         employeeWorkLocation, employeeDR,employeeSalary);
                 mainjframe.theHash.addToBucket(employeeAdding);
+                MyHashTable.employeesToDisplay();
+                MyHashTable.resetArrayList(MyHashTable.addingtojtable);
+                MyHashTable.displayTableInfo();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"The Employee Could Not Be Edited!");
