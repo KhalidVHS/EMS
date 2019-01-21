@@ -127,6 +127,7 @@ public class RemoveEmployee extends javax.swing.JFrame {
        int employeeBeingRemoved = Integer.parseInt(employeeNumberFromField);
        mainjframe.theHash.removeFromTable(employeeBeingRemoved);
        MyHashTable.employeesToDisplay();
+       MyHashTable.resetArrayList(MyHashTable.addingtojtable);
        MyHashTable.displayTableInfo();
        this.dispose();
        }

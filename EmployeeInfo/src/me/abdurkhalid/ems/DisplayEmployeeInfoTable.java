@@ -39,6 +39,7 @@ public class DisplayEmployeeInfoTable extends javax.swing.JFrame {
            HW.setText(""+pte.getHourlyWage());
            HPW.setText(""+pte.getHoursPerWeek());
            WPY.setText(""+pte.getWeeksPerYear());
+           SAL.setText(""+pte.calcDeductions(pte.getDeductionRate()));
        } else {
            FullTimeEmployee fte = (FullTimeEmployee) employee;
            SAL.setText(""+fte.calcDeductions(fte.getDeductionRate()));
